@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-assets-table
+      author: apetrov
+      changes:
+        - createTable:
+            tableName: assets
+            columns:
+              - column:
+                  name: ticker
+                  type: varchar(20)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: current_price
+                  type: numeric(19, 4)
+              - column:
+                  name: updated_at
+                  type: timestamp

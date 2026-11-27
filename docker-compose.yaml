@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: finfolio-db
+    environment:
+      POSTGRES_DB: finfolio
+      POSTGRES_USER: finfolio_user
+      POSTGRES_PASSWORD: finfolio_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
